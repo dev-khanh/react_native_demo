@@ -1,6 +1,7 @@
 /* eslint-disable prettier/prettier */
 import React, { Component } from 'react';
-import MainAsynchronousValidate from './src/redux_form/asynchronous_validate/MainAsynchronousValidate';
+// import MainAsynchronousValidate from './src/redux_form/asynchronous_validate/MainAsynchronousValidate';
+import LoginViewDemo from './src/View_ract_native/Login/LoginViewDemo';
 // import MainReduxForm from './src/redux_form/form_validate/MainReduxForm';
 // import MainRequestSubmit from './src/redux_form/request_data_submit/MainRequestSubmit';
 // import TodoDemo from './src/todo_demo/todo_demo';
@@ -43,7 +44,7 @@ import MainAsynchronousValidate from './src/redux_form/asynchronous_validate/Mai
 
 class App extends Component {
   render() {
-    return <MainAsynchronousValidate />;
+    return <LoginViewDemo />;
   }
 }
 export default App;
