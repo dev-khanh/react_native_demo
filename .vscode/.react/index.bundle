@@ -98550,7 +98550,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
 
   var _react = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[7], "react"));
 
-  var _MainReduxForm = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[8], "./src/redux_form/Demo_From/MainReduxForm"));
+  var _MainReduxForm = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[8], "./src/redux_form/form_validate/MainReduxForm"));
 
   var _jsxFileName = "c:\\Users\\dqkhanh\\Desktop\\react_native_demo\\App.js";
 
@@ -98575,7 +98575,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 43,
+            lineNumber: 44,
             columnNumber: 12
           }
         });
@@ -98586,7 +98586,77 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
 
   var _default = App;
   exports.default = _default;
-},473,[1,9,26,27,37,39,36,55,754],"App.js");
+},473,[1,9,26,27,37,39,36,55,474],"App.js");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
+
+  var _interopRequireWildcard = _$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/interopRequireWildcard");
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = void 0;
+
+  var _classCallCheck2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/classCallCheck"));
+
+  var _createClass2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[3], "@babel/runtime/helpers/createClass"));
+
+  var _inherits2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[4], "@babel/runtime/helpers/inherits"));
+
+  var _possibleConstructorReturn2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[5], "@babel/runtime/helpers/possibleConstructorReturn"));
+
+  var _getPrototypeOf2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[6], "@babel/runtime/helpers/getPrototypeOf"));
+
+  var _react = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[7], "react"));
+
+  var _reactRedux = _$$_REQUIRE(_dependencyMap[8], "react-redux");
+
+  var _store = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[9], "./store"));
+
+  var _ContactForm = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[10], "./ContactForm"));
+
+  var _jsxFileName = "c:\\Users\\dqkhanh\\Desktop\\react_native_demo\\src\\redux_form\\form_validate\\MainReduxForm.js";
+
+  function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = (0, _getPrototypeOf2.default)(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = (0, _getPrototypeOf2.default)(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return (0, _possibleConstructorReturn2.default)(this, result); }; }
+
+  function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+
+  var MainReduxForm = function (_PureComponent) {
+    (0, _inherits2.default)(MainReduxForm, _PureComponent);
+
+    var _super = _createSuper(MainReduxForm);
+
+    function MainReduxForm() {
+      (0, _classCallCheck2.default)(this, MainReduxForm);
+      return _super.apply(this, arguments);
+    }
+
+    (0, _createClass2.default)(MainReduxForm, [{
+      key: "render",
+      value: function render() {
+        return _react.default.createElement(_reactRedux.Provider, {
+          store: _store.default,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 12,
+            columnNumber: 13
+          }
+        }, _react.default.createElement(_ContactForm.default, {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 13,
+            columnNumber: 17
+          }
+        }));
+      }
+    }]);
+    return MainReduxForm;
+  }(_react.PureComponent);
+
+  exports.default = MainReduxForm;
+},474,[1,9,26,27,37,39,36,55,475,512,752],"src\\redux_form\\form_validate\\MainReduxForm.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   "use strict";
 
@@ -100338,6 +100408,23 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     verify(mergeProps, 'mergeProps', displayName);
   }
 },511,[1,479],"node_modules\\react-redux\\lib\\connect\\verifySubselectors.js");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = void 0;
+
+  var _redux = _$$_REQUIRE(_dependencyMap[0], "redux");
+
+  var _reduxForm = _$$_REQUIRE(_dependencyMap[1], "redux-form");
+
+  var rootReducer = (0, _redux.combineReducers)({
+    form: _reduxForm.reducer
+  });
+  var store = (0, _redux.createStore)(rootReducer);
+  var _default = store;
+  exports.default = _default;
+},512,[486,513],"src\\redux_form\\form_validate\\store.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   "use strict";
 
@@ -109480,99 +109567,6 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     };
   }
 },751,[1,13,475],"node_modules\\redux-form\\lib\\createValues.js");
-__d(function(global, require, _aUnused, _bUnused, module, exports, _cUnused) {
-  module.exports = {
-  "name": "Project_Demo_App",
-  "displayName": "Project_Demo_App"
-};
-},753,[],"app.json");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
-
-  var _interopRequireWildcard = _$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/interopRequireWildcard");
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.default = void 0;
-
-  var _classCallCheck2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/classCallCheck"));
-
-  var _createClass2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[3], "@babel/runtime/helpers/createClass"));
-
-  var _inherits2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[4], "@babel/runtime/helpers/inherits"));
-
-  var _possibleConstructorReturn2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[5], "@babel/runtime/helpers/possibleConstructorReturn"));
-
-  var _getPrototypeOf2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[6], "@babel/runtime/helpers/getPrototypeOf"));
-
-  var _react = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[7], "react"));
-
-  var _reactRedux = _$$_REQUIRE(_dependencyMap[8], "react-redux");
-
-  var _store = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[9], "./store"));
-
-  var _ContactForm = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[10], "./ContactForm"));
-
-  var _jsxFileName = "c:\\Users\\dqkhanh\\Desktop\\react_native_demo\\src\\redux_form\\Demo_From\\MainReduxForm.js";
-
-  function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = (0, _getPrototypeOf2.default)(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = (0, _getPrototypeOf2.default)(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return (0, _possibleConstructorReturn2.default)(this, result); }; }
-
-  function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
-
-  var MainReduxForm = function (_PureComponent) {
-    (0, _inherits2.default)(MainReduxForm, _PureComponent);
-
-    var _super = _createSuper(MainReduxForm);
-
-    function MainReduxForm() {
-      (0, _classCallCheck2.default)(this, MainReduxForm);
-      return _super.apply(this, arguments);
-    }
-
-    (0, _createClass2.default)(MainReduxForm, [{
-      key: "render",
-      value: function render() {
-        return _react.default.createElement(_reactRedux.Provider, {
-          store: _store.default,
-          __self: this,
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 12,
-            columnNumber: 13
-          }
-        }, _react.default.createElement(_ContactForm.default, {
-          __self: this,
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 13,
-            columnNumber: 17
-          }
-        }));
-      }
-    }]);
-    return MainReduxForm;
-  }(_react.PureComponent);
-
-  exports.default = MainReduxForm;
-},754,[1,9,26,27,37,39,36,55,475,755,756],"src\\redux_form\\Demo_From\\MainReduxForm.js");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.default = void 0;
-
-  var _redux = _$$_REQUIRE(_dependencyMap[0], "redux");
-
-  var _reduxForm = _$$_REQUIRE(_dependencyMap[1], "redux-form");
-
-  var rootReducer = (0, _redux.combineReducers)({
-    form: _reduxForm.reducer
-  });
-  var store = (0, _redux.createStore)(rootReducer);
-  var _default = store;
-  exports.default = _default;
-},755,[486,513],"src\\redux_form\\Demo_From\\store.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
 
@@ -109592,46 +109586,38 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var _reactNative = _$$_REQUIRE(_dependencyMap[5], "react-native");
 
   var _this = this,
-      _jsxFileName = "c:\\Users\\dqkhanh\\Desktop\\react_native_demo\\src\\redux_form\\Demo_From\\ContactForm.js";
-
-  var validate = function validate(values) {
-    var errors = {};
-
-    if (!values.username) {
-      errors.username = 'Required';
-    } else if (values.username.length > 20) {
-      errors.username = 'username must be less than or eua 20 characterd';
-    }
-
-    if (!values.email) {
-      errors.email = 'Required';
-    } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
-      errors.email = 'Invalid email address';
-    }
-
-    if (!values.age) {
-      errors.age = 'Required';
-    } else if (isNaN(Number(values.age))) {
-      errors.age = 'Age must be a number';
-    } else if (Number(values.age < 18)) {
-      errors.age = 'You must be at last 18 year old';
-    }
-
-    return errors;
-  };
-
-  var warn = function warn(values) {
-    var warnings = {};
-
-    if (values.age < 19) {
-      warnings.age = 'You seem a bit young';
-    }
-
-    return warnings;
-  };
+      _jsxFileName = "c:\\Users\\dqkhanh\\Desktop\\react_native_demo\\src\\redux_form\\form_validate\\ContactForm.js";
 
   var submit = function submit(values) {
     alert("Validation success. Value = ~" + JSON.stringify(values));
+  };
+
+  var required = function required(value) {
+    return value ? undefined : 'Required';
+  };
+
+  var maxLength15 = function maxLength15(value) {
+    return value && value.length > 15 ? 'Must be 15 characters or less' : undefined;
+  };
+
+  var number = function number(value) {
+    return value && isNaN(Number(value)) ? 'Must be a number' : undefined;
+  };
+
+  var minValue = function minValue(min) {
+    return function (value) {
+      return value && value < min ? "Must be at least " + min : undefined;
+    };
+  };
+
+  var minValue18 = minValue(18);
+
+  var over70YearsOld = function over70YearsOld(value) {
+    return value && value > 70 ? 'You might be too old.. ' : undefined;
+  };
+
+  var isYahooMail = function isYahooMail(value) {
+    return value && /.+@yahoo\.com/.test(value) ? 'Really? you still use yahoo mail? ' : undefined;
   };
 
   var renderField = function renderField(_ref) {
@@ -109649,7 +109635,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 38,
+        lineNumber: 23,
         columnNumber: 9
       }
     }, _react.default.createElement(_reactNative.View, {
@@ -109657,7 +109643,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 39,
+        lineNumber: 24,
         columnNumber: 13
       }
     }, _react.default.createElement(_reactNative.Text, {
@@ -109665,7 +109651,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 40,
+        lineNumber: 25,
         columnNumber: 17
       }
     }, label), _react.default.createElement(_reactNative.TextInput, (0, _extends2.default)({
@@ -109676,7 +109662,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 41,
+        lineNumber: 26,
         columnNumber: 17
       }
     }))), touched && (error && _react.default.createElement(_reactNative.Text, {
@@ -109684,7 +109670,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 43,
+        lineNumber: 28,
         columnNumber: 36
       }
     }, error) || warning && _react.default.createElement(_reactNative.Text, {
@@ -109692,7 +109678,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 43,
+        lineNumber: 28,
         columnNumber: 97
       }
     }, warning)));
@@ -109705,7 +109691,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 50,
+        lineNumber: 35,
         columnNumber: 9
       }
     }, _react.default.createElement(_reactNative.Text, {
@@ -109713,7 +109699,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 51,
+        lineNumber: 36,
         columnNumber: 13
       }
     }, "Redux-form example"), _react.default.createElement(_reduxForm.Field, {
@@ -109721,10 +109707,11 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       keyboardType: "default",
       label: "Username",
       component: renderField,
+      validate: [required, maxLength15],
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 52,
+        lineNumber: 37,
         columnNumber: 13
       }
     }), _react.default.createElement(_reduxForm.Field, {
@@ -109732,10 +109719,12 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       keyboardType: "email-address",
       label: "Email: ",
       component: renderField,
+      validate: isYahooMail,
+      warn: isYahooMail,
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 53,
+        lineNumber: 40,
         columnNumber: 13
       }
     }), _react.default.createElement(_reduxForm.Field, {
@@ -109743,10 +109732,12 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       keyboardType: "numeric",
       label: "Age: ",
       component: renderField,
+      validate: [required, number, minValue18],
+      warn: over70YearsOld,
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 54,
+        lineNumber: 44,
         columnNumber: 13
       }
     }), _react.default.createElement(_reactNative.TouchableOpacity, {
@@ -109755,7 +109746,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 55,
+        lineNumber: 48,
         columnNumber: 13
       }
     }, _react.default.createElement(_reactNative.Text, {
@@ -109763,7 +109754,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 56,
+        lineNumber: 49,
         columnNumber: 17
       }
     }, "Submit")));
@@ -109771,9 +109762,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
 
   _c = ContactComponent;
   var ContactForm = (0, _reduxForm.reduxForm)({
-    form: 'contact',
-    validate: validate,
-    warn: warn
+    form: 'contact'
   })(ContactComponent);
   var _default = ContactForm;
   exports.default = _default;
@@ -109838,7 +109827,13 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var _c;
 
   $RefreshReg$(_c, "ContactComponent");
-},756,[1,13,53,55,513,2],"src\\redux_form\\Demo_From\\ContactForm.js");
+},752,[1,13,53,55,513,2],"src\\redux_form\\form_validate\\ContactForm.js");
+__d(function(global, require, _aUnused, _bUnused, module, exports, _cUnused) {
+  module.exports = {
+  "name": "Project_Demo_App",
+  "displayName": "Project_Demo_App"
+};
+},753,[],"app.json");
 __r(94);
 __r(0);
 //# sourceMappingURL=index.map

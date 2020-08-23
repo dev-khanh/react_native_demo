@@ -1,5 +1,6 @@
 /* eslint-disable prettier/prettier */
 import React, { Component } from 'react';
+import MainReduxForm from './src/redux_form/form_validate/MainReduxForm';
 // import TodoDemo from './src/todo_demo/todo_demo';
 // import PropsInput from './src/props_input/props_input';
 // import MainRequestList from './src/todo_request_list/main_request_list';
@@ -20,7 +21,7 @@ import React, { Component } from 'react';
 // import Demosetinterval from './src/setinterval/demo_setinterval';
 // import CounterButton from './src/lifecycle/counter_button';
 // import LifecycleDemo from './src/lifecycle/lifecycle_demo';
-import MainReduxForm from './src/redux_form/Demo_From/MainReduxForm';
+// import MainReduxForm from './src/redux_form/Demo_From/MainReduxForm';
 // import FlatListView from './src/View_ract_native/flatlist_view';
 // import TextInputView from './src/View_ract_native/text_input';
 // import Scroll_View from './src/View_ract_native/scroll_view';
