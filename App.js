@@ -16,10 +16,11 @@ import React, { Component } from 'react';
 // import MainNavigationTab from './src/Navigation/Navigation_Tab/MainNavigationTab';
 // import MainNavigationDrawer from './src/Navigation/Navigation_drawer/MainNavigationDrawer';
 // import MainNavigationRedux from './src/Navigation/Navigation_redux/MainNavigationRedux';
-import MainNavigationTopTab from './src/Navigation/Navigation_TopTab/MainNavigationTopTab';
-import Demosetinterval from './src/setinterval/demo_setinterval';
-import CounterButton from './src/lifecycle/counter_button';
-import LifecycleDemo from './src/lifecycle/lifecycle_demo';
+// import MainNavigationTopTab from './src/Navigation/Navigation_TopTab/MainNavigationTopTab';
+// import Demosetinterval from './src/setinterval/demo_setinterval';
+// import CounterButton from './src/lifecycle/counter_button';
+// import LifecycleDemo from './src/lifecycle/lifecycle_demo';
+import MainReduxForm from './src/redux_form/Demo_From/MainReduxForm';
 // import FlatListView from './src/View_ract_native/flatlist_view';
 // import TextInputView from './src/View_ract_native/text_input';
 // import Scroll_View from './src/View_ract_native/scroll_view';
@@ -39,7 +40,7 @@ import LifecycleDemo from './src/lifecycle/lifecycle_demo';
 
 class App extends Component {
   render() {
-    return <LifecycleDemo />;
+    return <MainReduxForm />;
   }
 }
 export default App;
