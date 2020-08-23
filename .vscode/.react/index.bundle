@@ -98552,6 +98552,8 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
 
   var _MainReduxForm = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[8], "./src/redux_form/form_validate/MainReduxForm"));
 
+  var _MainRequestSubmit = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[9], "./src/redux_form/request_data_submit/MainRequestSubmit"));
+
   var _jsxFileName = "c:\\Users\\dqkhanh\\Desktop\\react_native_demo\\App.js";
 
   function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = (0, _getPrototypeOf2.default)(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = (0, _getPrototypeOf2.default)(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return (0, _possibleConstructorReturn2.default)(this, result); }; }
@@ -98571,11 +98573,11 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     (0, _createClass2.default)(App, [{
       key: "render",
       value: function render() {
-        return _react.default.createElement(_MainReduxForm.default, {
+        return _react.default.createElement(_MainRequestSubmit.default, {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 44,
+            lineNumber: 45,
             columnNumber: 12
           }
         });
@@ -98586,7 +98588,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
 
   var _default = App;
   exports.default = _default;
-},473,[1,9,26,27,37,39,36,55,474],"App.js");
+},473,[1,9,26,27,37,39,36,55,474,754],"App.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
 
@@ -109612,6 +109614,10 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
 
   var minValue18 = minValue(18);
 
+  var isValidEmail = function isValidEmail(value) {
+    return value && !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(value) ? 'Invalid email address' : undefined;
+  };
+
   var over70YearsOld = function over70YearsOld(value) {
     return value && value > 70 ? 'You might be too old.. ' : undefined;
   };
@@ -109719,7 +109725,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       keyboardType: "email-address",
       label: "Email: ",
       component: renderField,
-      validate: isYahooMail,
+      validate: isValidEmail,
       warn: isYahooMail,
       __self: _this,
       __source: {
@@ -109834,6 +109840,377 @@ __d(function(global, require, _aUnused, _bUnused, module, exports, _cUnused) {
   "displayName": "Project_Demo_App"
 };
 },753,[],"app.json");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
+
+  var _interopRequireWildcard = _$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/interopRequireWildcard");
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = void 0;
+
+  var _classCallCheck2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/classCallCheck"));
+
+  var _createClass2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[3], "@babel/runtime/helpers/createClass"));
+
+  var _inherits2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[4], "@babel/runtime/helpers/inherits"));
+
+  var _possibleConstructorReturn2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[5], "@babel/runtime/helpers/possibleConstructorReturn"));
+
+  var _getPrototypeOf2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[6], "@babel/runtime/helpers/getPrototypeOf"));
+
+  var _react = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[7], "react"));
+
+  var _reactRedux = _$$_REQUIRE(_dependencyMap[8], "react-redux");
+
+  var _store = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[9], "./store"));
+
+  var _ContactForm = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[10], "./ContactForm"));
+
+  var _jsxFileName = "c:\\Users\\dqkhanh\\Desktop\\react_native_demo\\src\\redux_form\\request_data_submit\\MainRequestSubmit.js";
+
+  function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = (0, _getPrototypeOf2.default)(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = (0, _getPrototypeOf2.default)(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return (0, _possibleConstructorReturn2.default)(this, result); }; }
+
+  function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+
+  var MainRequestSubmit = function (_PureComponent) {
+    (0, _inherits2.default)(MainRequestSubmit, _PureComponent);
+
+    var _super = _createSuper(MainRequestSubmit);
+
+    function MainRequestSubmit() {
+      (0, _classCallCheck2.default)(this, MainRequestSubmit);
+      return _super.apply(this, arguments);
+    }
+
+    (0, _createClass2.default)(MainRequestSubmit, [{
+      key: "render",
+      value: function render() {
+        return _react.default.createElement(_reactRedux.Provider, {
+          store: _store.default,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 12,
+            columnNumber: 13
+          }
+        }, _react.default.createElement(_ContactForm.default, {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 13,
+            columnNumber: 17
+          }
+        }));
+      }
+    }]);
+    return MainRequestSubmit;
+  }(_react.PureComponent);
+
+  exports.default = MainRequestSubmit;
+},754,[1,9,26,27,37,39,36,55,475,755,756],"src\\redux_form\\request_data_submit\\MainRequestSubmit.js");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = void 0;
+
+  var _redux = _$$_REQUIRE(_dependencyMap[0], "redux");
+
+  var _reduxForm = _$$_REQUIRE(_dependencyMap[1], "redux-form");
+
+  var rootReducer = (0, _redux.combineReducers)({
+    form: _reduxForm.reducer
+  });
+  var store = (0, _redux.createStore)(rootReducer);
+  var _default = store;
+  exports.default = _default;
+},755,[486,513],"src\\redux_form\\request_data_submit\\store.js");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = void 0;
+
+  var _extends2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/extends"));
+
+  var _objectWithoutProperties2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/objectWithoutProperties"));
+
+  var _react = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[3], "react"));
+
+  var _reduxForm = _$$_REQUIRE(_dependencyMap[4], "redux-form");
+
+  var _reactNative = _$$_REQUIRE(_dependencyMap[5], "react-native");
+
+  var _submit = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[6], "./submit"));
+
+  var _this = this,
+      _jsxFileName = "c:\\Users\\dqkhanh\\Desktop\\react_native_demo\\src\\redux_form\\request_data_submit\\ContactForm.js";
+
+  var renderField = function renderField(_ref) {
+    var label = _ref.label,
+        keyboardType = _ref.keyboardType,
+        placeholder = _ref.placeholder,
+        _ref$meta = _ref.meta,
+        touched = _ref$meta.touched,
+        error = _ref$meta.error,
+        warning = _ref$meta.warning,
+        _ref$input = _ref.input,
+        onChange = _ref$input.onChange,
+        restInput = (0, _objectWithoutProperties2.default)(_ref$input, ["onChange"]);
+    return _react.default.createElement(_reactNative.View, {
+      style: styles.viewContainerField,
+      __self: _this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 13,
+        columnNumber: 9
+      }
+    }, _react.default.createElement(_reactNative.View, {
+      style: styles.viewContainer,
+      __self: _this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 14,
+        columnNumber: 13
+      }
+    }, _react.default.createElement(_reactNative.Text, {
+      style: styles.textContainer,
+      __self: _this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 15,
+        columnNumber: 17
+      }
+    }, label), _react.default.createElement(_reactNative.TextInput, (0, _extends2.default)({
+      style: styles.textInputContainer,
+      keyboardType: keyboardType,
+      onChangeText: onChange
+    }, restInput, {
+      placeholder: placeholder,
+      autoCapitalize: "none",
+      __self: _this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 16,
+        columnNumber: 17
+      }
+    }))), touched && (error && _react.default.createElement(_reactNative.Text, {
+      style: styles.colorRed,
+      __self: _this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 20,
+        columnNumber: 36
+      }
+    }, error) || warning && _react.default.createElement(_reactNative.Text, {
+      style: styles.colororange,
+      __self: _this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 20,
+        columnNumber: 97
+      }
+    }, warning)));
+  };
+
+  var ContactComponent = function ContactComponent(props) {
+    var handleSubmit = props.handleSubmit,
+        submitting = props.submitting,
+        reset = props.reset;
+    console.log("submitting = " + submitting);
+    return _react.default.createElement(_reactNative.View, {
+      style: styles.viewContainerContact,
+      __self: _this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 28,
+        columnNumber: 9
+      }
+    }, _react.default.createElement(_reactNative.Text, {
+      style: styles.textContact,
+      __self: _this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 29,
+        columnNumber: 13
+      }
+    }, "Redux-form Submit severs"), _react.default.createElement(_reactNative.Text, {
+      __self: _this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 30,
+        columnNumber: 13
+      }
+    }, "username: must be hoang, hoangnd, or ndhoang"), _react.default.createElement(_reactNative.Text, {
+      __self: _this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 31,
+        columnNumber: 13
+      }
+    }, "email: must be sunlight4d@gmail.com"), _react.default.createElement(_reduxForm.Field, {
+      name: "username",
+      keyboardType: "default",
+      label: "Username",
+      placeholder: "Enter name",
+      component: renderField,
+      __self: _this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 32,
+        columnNumber: 13
+      }
+    }), _react.default.createElement(_reduxForm.Field, {
+      name: "email",
+      keyboardType: "email-address",
+      label: "Email: ",
+      placeholder: "Enter email",
+      component: renderField,
+      __self: _this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 34,
+        columnNumber: 13
+      }
+    }), _react.default.createElement(_reduxForm.Field, {
+      name: "age",
+      keyboardType: "numeric",
+      label: "Age: ",
+      component: renderField,
+      __self: _this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 36,
+        columnNumber: 13
+      }
+    }), _react.default.createElement(_reactNative.TouchableOpacity, {
+      onPress: handleSubmit(_submit.default),
+      style: styles.touch,
+      disabled: submitting,
+      __self: _this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 38,
+        columnNumber: 13
+      }
+    }, _react.default.createElement(_reactNative.Text, {
+      style: styles.textTouch,
+      __self: _this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 39,
+        columnNumber: 17
+      }
+    }, "Submit")));
+  };
+
+  _c = ContactComponent;
+  var ContactForm = (0, _reduxForm.reduxForm)({
+    form: 'contact'
+  })(ContactComponent);
+  var _default = ContactForm;
+  exports.default = _default;
+
+  var styles = _reactNative.StyleSheet.create({
+    viewContainer: {
+      flexDirection: 'row',
+      height: 50,
+      alignItems: 'center'
+    },
+    viewContainerField: {
+      flexDirection: 'column',
+      height: 70,
+      justifyContent: 'flex-start'
+    },
+    textContainer: {
+      fontSize: 14,
+      fontWeight: 'bold',
+      width: 80
+    },
+    textInputContainer: {
+      borderColor: 'steelblue',
+      borderWidth: 1,
+      height: 37,
+      width: 220,
+      padding: 5
+    },
+    viewContainerContact: {
+      flex: 1,
+      flexDirection: 'column',
+      margin: 40,
+      justifyContent: 'flex-start'
+    },
+    textContact: {
+      fontSize: 18,
+      fontWeight: 'bold',
+      width: 200,
+      textAlign: 'center',
+      margin: 10
+    },
+    touch: {
+      margin: 10,
+      alignItems: 'center'
+    },
+    textTouch: {
+      backgroundColor: 'steelblue',
+      color: 'white',
+      fontSize: 16,
+      height: 37,
+      width: 200,
+      textAlign: 'center',
+      padding: 10
+    },
+    colorRed: {
+      color: 'red'
+    },
+    colororange: {
+      color: 'orange'
+    }
+  });
+
+  var _c;
+
+  $RefreshReg$(_c, "ContactComponent");
+},756,[1,13,53,55,513,2,757],"src\\redux_form\\request_data_submit\\ContactForm.js");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = void 0;
+
+  var _reduxForm = _$$_REQUIRE(_dependencyMap[0], "redux-form");
+
+  var sleep = function sleep(ms) {
+    return new Promise(function (resolve) {
+      return setTimeout(resolve, ms);
+    });
+  };
+
+  var submit = function submit(values) {
+    return sleep(1000).then(function () {
+      if (!['hoang', 'hoangnd', 'ndhoang'].includes(values.username)) {
+        throw new _reduxForm.SubmissionError({
+          username: 'User does not exist',
+          _error: 'Login failed!'
+        });
+      } else if (values.email !== 'sunlight4d@gmail.com') {
+        throw new _reduxForm.SubmissionError({
+          email: 'Wrong email',
+          _error: 'Login failed'
+        });
+      } else {
+        alert("Validation success. Value = " + JSON.stringify(values));
+      }
+    });
+  };
+
+  var _default = submit;
+  exports.default = _default;
+},757,[513],"src\\redux_form\\request_data_submit\\submit.js");
 __r(94);
 __r(0);
 //# sourceMappingURL=index.map

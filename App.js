@@ -1,6 +1,7 @@
 /* eslint-disable prettier/prettier */
 import React, { Component } from 'react';
 import MainReduxForm from './src/redux_form/form_validate/MainReduxForm';
+import MainRequestSubmit from './src/redux_form/request_data_submit/MainRequestSubmit';
 // import TodoDemo from './src/todo_demo/todo_demo';
 // import PropsInput from './src/props_input/props_input';
 // import MainRequestList from './src/todo_request_list/main_request_list';
@@ -41,7 +42,7 @@ import MainReduxForm from './src/redux_form/form_validate/MainReduxForm';
 
 class App extends Component {
   render() {
-    return <MainReduxForm />;
+    return <MainRequestSubmit />;
   }
 }
 export default App;
