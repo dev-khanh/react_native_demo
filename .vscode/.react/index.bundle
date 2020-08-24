@@ -1339,7 +1339,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   _reactNative.AppRegistry.registerComponent(_app.name, function () {
     return _App.default;
   });
-},0,[1,2,473,753],"index.js");
+},0,[1,2,473,478],"index.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : {
@@ -98586,13 +98586,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
 
   var _default = App;
   exports.default = _default;
-},473,[1,9,26,27,37,39,36,55,768],"App.js");
-__d(function(global, require, _aUnused, _bUnused, module, exports, _cUnused) {
-  module.exports = {
-  "name": "Project_Demo_App",
-  "displayName": "Project_Demo_App"
-};
-},753,[],"app.json");
+},473,[1,9,26,27,37,39,36,55,474],"App.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
 
@@ -98675,7 +98669,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   }(_react.PureComponent);
 
   exports.default = LoginViewDemo;
-},768,[1,9,26,27,37,39,36,55,769,772],"src\\View_ract_native\\Login\\LoginViewDemo.js");
+},474,[1,9,26,27,37,39,36,55,475,477],"src\\View_ract_native\\Login\\LoginViewDemo.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
 
@@ -98907,7 +98901,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       fontSize: 18
     }
   });
-},769,[1,9,26,27,37,39,36,55,2,771],"src\\View_ract_native\\Login\\login.js");
+},475,[1,9,26,27,37,39,36,55,2,476],"src\\View_ract_native\\Login\\login.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   module.exports = _$$_REQUIRE(_dependencyMap[0], "react-native/Libraries/Image/AssetRegistry").registerAsset({
     "__packager_asset": true,
@@ -98919,7 +98913,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
     "name": "logo",
     "type": "png"
   });
-},771,[219],"src\\View_ract_native\\Login\\logo.png");
+},476,[219],"src\\View_ract_native\\Login\\logo.png");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
 
@@ -99011,7 +99005,13 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       color: 'white'
     }
   });
-},772,[1,9,26,27,37,39,36,55,2],"src\\View_ract_native\\Login\\home.js");
+},477,[1,9,26,27,37,39,36,55,2],"src\\View_ract_native\\Login\\home.js");
+__d(function(global, require, _aUnused, _bUnused, module, exports, _cUnused) {
+  module.exports = {
+  "name": "Project_Demo_App",
+  "displayName": "Project_Demo_App"
+};
+},478,[],"app.json");
 __r(94);
 __r(0);
 //# sourceMappingURL=index.map
