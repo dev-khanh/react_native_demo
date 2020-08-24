@@ -1,14 +1,15 @@
-import React, {PureComponent} from 'react';
-import {View, Text, StyleSheet} from 'react-native';
-import {getPeople} from './store';
-import {connect} from 'react-redux';
+import React, { PureComponent } from 'react';
+import { View, Text, StyleSheet } from 'react-native';
+import { getPeople } from './store';
+import { connect } from 'react-redux';
 
 class PeopleList extends PureComponent {
   componentDidMount() {
     this.props.getPeople();
   }
   render() {
-    const {people, loading} = this.props;
+    const { people, loading } = this.props;
+    console.log('DEVK data people: ', people);
     if (!loading) {
       return (
         <View style={styles.container}>
@@ -17,7 +18,7 @@ class PeopleList extends PureComponent {
           ) : (
             <Text>No People</Text>
           )} */}
-            <Text>{people.title}</Text>
+          <Text>{people.title}</Text>
         </View>
       );
     } else {
