@@ -9,6 +9,7 @@ class PeopleList extends PureComponent {
   }
   render() {
     const {people, loading} = this.props;
+    console.log('DEVK data people: ', people);
     if (!loading) {
       return (
         <View style={styles.container}>
@@ -17,7 +18,7 @@ class PeopleList extends PureComponent {
           ) : (
             <Text>No People</Text>
           )} */}
-            <Text>{people.title}</Text>
+          <Text>{people.title}</Text>
         </View>
       );
     } else {
