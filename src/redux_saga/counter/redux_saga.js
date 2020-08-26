@@ -25,4 +25,4 @@ export default class ReduxSaga extends Component {
     }
 }
 
-sagaMiddleware.run(rootSaga); //Chạy xuyên suốt các hàm rootSaga trong app 
+sagaMiddleware.run(rootSaga); //Chạy xuyên suốt các hàm rootSaga trong app
