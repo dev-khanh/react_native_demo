@@ -1,6 +1,7 @@
 import {takeLatest, put, fork} from 'redux-saga/effects';
 export default function* rootSaga() {
-  yield fork[(getApiSaga, getDataSaga)];
+  yield fork(getApiSaga);
+  yield fork(getDataSaga);
 }
 function* getApiSaga() {
   yield takeLatest('UP_SORT', functiongetAPI);
@@ -30,6 +31,6 @@ function* functiongetDEMO() {
   try {
     const response = yield fetch('https://reactnative.dev/movies.json');
     const getdataMovies = yield response.status === 200 ? response.json() : [];
-    console.log('dev data: ' + getdataMovies.data[0].fullname);
+    console.log('dev data: ', getdataMovies.title);
   } catch (e) {}
 }

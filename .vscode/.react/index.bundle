@@ -105081,9 +105081,13 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
         switch (_context.prev = _context.next) {
           case 0:
             _context.next = 2;
-            return _effects.fork[(getApiSaga, getDataSaga)];
+            return (0, _effects.fork)(getApiSaga);
 
           case 2:
+            _context.next = 4;
+            return (0, _effects.fork)(getDataSaga);
+
+          case 4:
           case "end":
             return _context.stop();
         }
@@ -105187,7 +105191,7 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
 
           case 6:
             getdataMovies = _context5.sent;
-            console.log('dev data: ' + getdataMovies.data[0].fullname);
+            console.log('dev data: ', getdataMovies.title);
             _context5.next = 12;
             break;
 
