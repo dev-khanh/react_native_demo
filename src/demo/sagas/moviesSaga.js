@@ -1,5 +1,4 @@
 /* eslint-disable prettier/prettier */
-import { FETCH_MOVIES, FETCH_SUCCESS, FETCH_FAILED } from '../actions/actionTypes';
 import { put, takeLatest } from 'redux-saga/effects';
 function* fetchMovies() {
     try {
@@ -12,11 +11,11 @@ function* fetchMovies() {
             body: '',
         });
         const movies = yield response.status === 200 ? response.json() : [];
-        yield put({ type: FETCH_SUCCESS, receivedMovies: movies });
+        // console.log('DEVK: ', movies.data[0].fullname);
+        yield put({ type: 'FETCH_SUCCESS', receivedMovies: movies.data[0].fullname });
     } catch (error) {
-        yield put({ type: FETCH_FAILED, error });
     }
 }
 export function* watchFetchMovies() {
-    yield takeLatest(FETCH_MOVIES, fetchMovies);
+    yield takeLatest('FETCH_MOVIES', fetchMovies);
 }
