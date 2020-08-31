@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 // import MainAsynchronousValidate from './src/redux_form/asynchronous_validate/MainAsynchronousValidate';
 // import LoginViewDemo from './src/View_ract_native/Login/LoginViewDemo';
-import ExampleSaga from './src/demo/example_saga';
+// import ExampleSaga from './src/demo/example_saga';
 // import MainReduxForm from './src/redux_form/form_validate/MainReduxForm';
 // import MainRequestSubmit from './src/redux_form/request_data_submit/MainRequestSubmit';
 // import TodoDemo from './src/todo_demo/todo_demo';
@@ -43,9 +43,10 @@ import ExampleSaga from './src/demo/example_saga';
 // import VirtualizedListExample from './src/View_ract_native/virtualized_list_example';
 // import TextStylesPropsSetttings from './src/View_ract_native/text_style _props_settings';
 
+import ExampleSagaDemo from './src/example_saga/example_saga';
 class App extends Component {
   render() {
-    return <ExampleSaga />;
+    return <ExampleSagaDemo />;
   }
 }
 export default App;
