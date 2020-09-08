@@ -42,11 +42,11 @@ import React, { Component } from 'react';
 // import StatusBarView from './src/View_ract_native/status_bar_view';
 // import VirtualizedListExample from './src/View_ract_native/virtualized_list_example';
 // import TextStylesPropsSetttings from './src/View_ract_native/text_style _props_settings';
+import ExampleSaga from './src/example_saga/example_saga';
 
-import ExampleSagaDemo from './src/example_saga/example_saga';
 class App extends Component {
   render() {
-    return <ExampleSagaDemo />;
+    return <ExampleSaga />;
   }
 }
 export default App;

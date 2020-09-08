@@ -1,27 +1,19 @@
 import React, {PureComponent} from 'react';
-import {createStore} from 'redux';
+import {createStore, applyMiddleware} from 'redux';
 import {Provider} from 'react-redux';
-import DemoContainer from './containers/demoContainer';
-const appState = {name: 'duong Quoc Khanh'};
-function reducer(state = appState, action) {
-  switch (action.type) {
-    case 'UPDATE_STATE':
-      return {
-        ...state,
-        name: action.name,
-      };
-    default:
-      return state;
-  }
-}
-const store = createStore(reducer);
+import createApplyMiddleware from 'redux-saga';
+const SagaMiddleware = createApplyMiddleware();
+import MainNavigationStack from './total/MainNavigationStack';
+import rootSaga from './saga/rootSaga';
+import allReduces from './reducer';
+const store = createStore(allReduces, applyMiddleware(SagaMiddleware));
 export default class ExampleSaga extends PureComponent {
   render() {
-    console.log('DEVK');
     return (
       <Provider store={store}>
-        <DemoContainer />
+        <MainNavigationStack />
       </Provider>
     );
   }
 }
+SagaMiddleware.run(rootSaga);
