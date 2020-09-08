@@ -44,9 +44,11 @@ import React, { Component } from 'react';
 // import TextStylesPropsSetttings from './src/View_ract_native/text_style _props_settings';
 import ExampleSaga from './src/example_saga/example_saga';
 
+// import ExampleSagaDemo from './src/example_saga/example_saga';
+import MainApp from './src/app/MainApp';
 class App extends Component {
   render() {
-    return <ExampleSaga />;
+    return <MainApp />;
   }
 }
 export default App;
