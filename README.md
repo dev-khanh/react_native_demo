@@ -21,3 +21,10 @@
 9. Icons: https://oblador.github.io/react-native-vector-icons/
 
 10. UI components: https://nativebase.io/
+
+
+1.create directory  android/app/src/main/assets
+
+2. run following command from project root directory
+
+react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res
